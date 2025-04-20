@@ -40,6 +40,19 @@ public interface Http3SettingsFrame extends Http3ControlStreamFrame, Iterable<Ma
      */
     long HTTP3_SETTINGS_MAX_FIELD_SECTION_SIZE = 0x6;
 
+    /**
+     * See <a href="https://www.rfc-editor.org/rfc/rfc9297#section-2.1.1">
+     *     SETTINGS_H3_DATAGRAM</a>
+     */
+    long HTTP3_SETTINGS_H3_DATAGRAM = 0x33;
+
+    /**
+     * See <a href="https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http3/#section-9.2">
+     *     SETTINGS_WEBTRANSPORT_MAX_SESSIONS</a>
+     *
+     */
+    long  HTTP3_SETTINGS_WEBTRANSPORT_MAX_SESSIONS = 0xc671706aL;
+
     @Override
     default long type() {
         return Http3CodecUtils.HTTP3_SETTINGS_FRAME_TYPE;
