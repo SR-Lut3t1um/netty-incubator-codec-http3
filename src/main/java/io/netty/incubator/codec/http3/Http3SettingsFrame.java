@@ -20,7 +20,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 
 /**
- * See <a href="https://tools.ietf.org/html/draft-ietf-quic-http-32#section-7.2.4">SETTINGS</a>.
+ * See <a href=
+ * "https://tools.ietf.org/html/draft-ietf-quic-http-32#section-7.2.4">SETTINGS</a>.
  */
 public interface Http3SettingsFrame extends Http3ControlStreamFrame, Iterable<Map.Entry<Long, Long>> {
 
@@ -39,6 +40,26 @@ public interface Http3SettingsFrame extends Http3ControlStreamFrame, Iterable<Ma
      *     SETTINGS_MAX_FIELD_SECTION_SIZE</a>.
      */
     long HTTP3_SETTINGS_MAX_FIELD_SECTION_SIZE = 0x6;
+
+    /**
+     * See <a href="https://www.rfc-editor.org/rfc/rfc9297#section-2.1.1">
+     *     SETTINGS_H3_DATAGRAM</a>
+     */
+    long HTTP3_SETTINGS_H3_DATAGRAM = 0x33;
+
+    /**
+     * See <a href="https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http3/#section-9.2">
+     *     SETTINGS_WEBTRANSPORT_MAX_SESSIONS</a>
+     *
+     */
+    long HTTP3_SETTINGS_WEBTRANSPORT_MAX_SESSIONS = 0xc671706aL;
+
+    /**
+     * See
+     * <a href="https://www.rfc-editor.org/rfc/rfc9220#name-iana-considerations">
+     *      SETTINGS_ENABLE_CONNECT_PROTOCOL</a>
+     */
+    long SETTINGS_ENABLE_CONNECT_PROTOCOL = 0x08;
 
     @Override
     default long type() {
